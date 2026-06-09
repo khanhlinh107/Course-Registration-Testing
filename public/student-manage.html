@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Quản Lý Sinh Viên</h2>
+        <button class="btn btn-secondary" onclick="window.location.href='admin-dashboard.html'">Quay lại Dashboard</button>
+    </div>
+
+    <div class="main-wrapper" style="min-height:auto;">
+        <div class="sidebar">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-courses.html">Quản lý Môn học</a>
+            <a href="student-manage.html" class="active">Quản lý Sinh viên</a>
+            <a href="timeslot-manage.html">Quản lý Lịch học</a>
+        </div>
+        <div class="content">
+            <div class="page-heading">
+                <div>
+                    <h1>Trang Quản lý Sinh viên</h1>
+                    <p>Thêm, xem, chỉnh sửa và xóa thông tin sinh viên trong hệ thống.</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Thêm sinh viên mới</h3>
+                <form id="studentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="username">Tên đăng nhập</label>
+                            <input type="text" id="username" class="form-control" placeholder="Tên đăng nhập" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mật khẩu</label>
+                            <input type="password" id="password" class="form-control" placeholder="Mật khẩu" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentCode">Mã sinh viên</label>
+                            <input type="text" id="studentCode" class="form-control" placeholder="Mã sinh viên" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Họ tên</label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Họ tên" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="major">Chuyên ngành</label>
+                            <input type="text" id="major" class="form-control" placeholder="Chuyên ngành" required>
+                        </div>
+                    </div>
+                    <div class="action-bar">
+                        <button type="submit" class="btn btn-primary">Thêm sinh viên</button>
+                    </div>
+                    <div id="studentMessage" class="message-box"></div>
+                </form>
+            </div>
+
+            <div class="panel" style="margin-top: 24px;">
+                <h3>Danh sách sinh viên hiện tại</h3>
+                <p style="color:#475569;">Tổng số sinh viên: <strong id="studentCount">0</strong></p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã SV</th>
+                                <th>Họ tên</th>
+                                <th>Email</th>
+                                <th>Chuyên ngành</th>
+                                <th>Tên đăng nhập</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 - Quản lý Sinh viên</footer>
+    <script src="js/student-manage.js"></script>
+</body>
+</html>

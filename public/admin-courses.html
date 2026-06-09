@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Môn Học</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Quản Lý Môn Học</h2>
+        <button class="btn btn-secondary" onclick="window.location.href='admin-dashboard.html'">Quay lại Dashboard</button>
+    </div>
+
+    <div class="main-wrapper" style="min-height:auto;">
+        <div class="sidebar">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-courses.html" class="active">Quản lý Môn học</a>
+            <a href="student-manage.html">Quản lý Sinh viên</a>
+            <a href="timeslot-manage.html">Quản lý Lịch học</a>
+        </div>
+        <div class="content">
+            <div class="page-heading">
+                <div>
+                    <h1>Trang Quản lý Môn học</h1>
+                    <p>Thêm, xem và quản lý danh sách môn học đang mở cho sinh viên đăng ký.</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Thêm môn học mới</h3>
+                <form id="courseForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="courseCode">Mã môn học</label>
+                            <input type="text" id="courseCode" class="form-control" placeholder="Mã môn học" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="courseName">Tên môn học</label>
+                            <input type="text" id="courseName" class="form-control" placeholder="Tên môn học" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="credits">Số tín chỉ</label>
+                            <input type="number" id="credits" class="form-control" placeholder="Số tín chỉ" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxStudents">Sĩ số tối đa</label>
+                            <input type="number" id="maxStudents" class="form-control" placeholder="Sĩ số tối đa" required min="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="semesterId">Semester ID</label>
+                        <input type="number" id="semesterId" class="form-control" placeholder="Semester ID" required min="1">
+                    </div>
+                    <div class="action-bar">
+                        <button type="submit" class="btn btn-primary">Thêm môn học</button>
+                    </div>
+                    <div id="courseMessage" class="message-box"></div>
+                </form>
+            </div>
+
+            <div class="panel" style="margin-top: 24px;">
+                <h3>Danh sách môn học hiện tại</h3>
+                <p style="color:#475569;">Số môn học đang có: <strong id="courseCount">0</strong></p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã môn</th>
+                                <th>Tên môn</th>
+                                <th>Tín chỉ</th>
+                                <th>Sĩ số tối đa</th>
+                                <th>Học kỳ</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="courseTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="js/admin-courses.js"></script>
+
+</body>
+</html>

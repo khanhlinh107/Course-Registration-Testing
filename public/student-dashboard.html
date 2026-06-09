@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Đăng Ký Môn Học - Sinh Viên</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Xin chào Sinh Viên: <span id="studentName">...</span></h2>
+        <button class="logout-btn" onclick="logout()">Đăng Xuất</button>
+    </div>
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <a href="#" class="active">Đăng ký môn học</a>
+            <a href="#schedule">Lịch học cá nhân</a>
+        </div>
+        <div class="content">
+            <div class="page-heading">
+                <div>
+                    <h1>Trang Sinh Viên</h1>
+                    <p>Đăng ký môn học nhanh chóng và xem tiến độ tín chỉ hiện tại.</p>
+                </div>
+            </div>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Tổng tín chỉ đã chọn</h3>
+                    <p id="totalCredits">0</p>
+                    <small>Đã chọn trong học kỳ hiện tại</small>
+                </div>
+                <div class="card success">
+                    <h3>Số lớp đã đăng ký</h3>
+                    <p id="registeredCourseCount">0</p>
+                    <small>Hiện tại sinh viên đang theo học</small>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h3>Danh sách môn học mở đăng ký</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã Môn</th>
+                                <th>Tên Môn Học</th>
+                                <th>Tín Chỉ</th>
+                                <th>Học Kỳ</th>
+                                <th>Phòng học</th>
+                                <th>Thứ ngày</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="availableCoursesTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel" id="schedule" style="margin-top: 30px;">
+                <h3>Môn học đã đăng ký thành công</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã Môn</th>
+                                <th>Tên Môn Học</th>
+                                <th>Tín Chỉ</th>
+                                <th>Phòng học</th>
+                                <th>Thứ ngày</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registeredCoursesTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; 2026 - Đồ án Kiểm thử & Đánh giá Phần mềm - Hệ Thống Đăng Ký Môn Học</footer>
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="js/student.js"></script>
+</body>
+</html>

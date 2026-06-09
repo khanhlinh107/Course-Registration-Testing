@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Trị - Portal Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Hệ Thống Quản Trị Portal <span id="adminName">...</span></h2>
+        <button class="logout-btn" onclick="logout()">Đăng Xuất</button>
+    </div>
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <a href="admin-dashboard.html" class="active">Bảng điều khiển</a>
+            <a href="admin-courses.html">Quản lý Môn học</a>
+            <a href="student-manage.html">Quản lý Sinh viên</a>
+            <a href="timeslot-manage.html">Quản lý Lịch học</a>
+        </div>
+        <div class="content">
+            <div class="page-heading">
+                <div>
+                    <h1>Dashboard Admin</h1>
+                    <p>Giám sát số liệu đăng ký, sĩ số lớp và các hoạt động mới trong hệ thống.</p>
+                </div>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Tổng số sinh viên</h3>
+                    <p id="statStudents">0</p>
+                    <small>Học viên đang kích hoạt</small>
+                </div>
+                <div class="card">
+                    <h3>Tổng số môn học</h3>
+                    <p id="statCourses">0</p>
+                    <small>Môn học đang mở đăng ký</small>
+                </div>
+                <div class="card success">
+                    <h3>Tổng số đăng ký</h3>
+                    <p id="statRegistrations">0</p>
+                    <small>Đăng ký thành công</small>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Tình trạng sĩ số đăng ký</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã Môn Học</th>
+                                <th>Tên Môn Học</th>
+                                <th>Sĩ số hiện tại</th>
+                                <th>Giới hạn tối đa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="courseStatsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel" style="margin-top: 24px;">
+                <h3>Gần đây - Đăng ký mới nhất</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ngày đăng ký</th>
+                                <th>Mã Sinh Viên</th>
+                                <th>Tên Sinh Viên</th>
+                                <th>Mã Môn</th>
+                                <th>Tên Môn</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentRegistrationsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel" style="margin-top: 24px;">
+                <h3>Đã huỷ gần đây</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ngày huỷ</th>
+                                <th>Mã Sinh Viên</th>
+                                <th>Tên Sinh Viên</th>
+                                <th>Mã Môn</th>
+                                <th>Tên Môn</th>
+                            </tr>
+                        </thead>
+                        <tbody id="canceledRegistrationsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; 2026 - Quản trị Hệ Thống Đăng Ký Môn Học</footer>
+    <script src="js/admin.js"></script>
+</body>
+</html>
