@@ -476,3 +476,5 @@ For issues or questions:
 **Status**: ✅ Production Ready
 **Last Updated**: 2026
 **Version**: 1.0.0
+
+Ảnh Lab7: Trong Folder PostmanPDF
